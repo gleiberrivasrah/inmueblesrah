@@ -1,20 +1,32 @@
 backend:
-  name: git-gateway
-  branch: main # o master según tu repositorio
+  name: github
+  repo: gleiberrivasrah/inmueblesrah
+  branch: main
 
-media_folder: "images/uploads" # Carpeta donde se guardarán las fotos
+media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "inmuebles"
+  - name: "listings"
     label: "Inmuebles"
-    folder: "inmuebles"
+    folder: "data"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Descripción", name: "description", widget: "text" }
-      - { label: "Precio", name: "price", widget: "string" }
-      - { label: "Ubicación", name: "location", widget: "string" }
-      - { label: "Imagen principal", name: "thumbnail", widget: "image" }
-      - { label: "Galería de imágenes", name: "gallery", widget: "list", field: { label: Imagen, name: image, widget: image } }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Tipo", name: "tipo", widget: "select", options: ["venta","alquiler"] }
+      - { label: "Precio USD", name: "precioUSD", widget: "number" }
+      - { label: "Ubicación", name: "ubicacion", widget: "object", fields: 
+          [{ label: "Municipio", name: "municipio", widget: "string" },
+           { label: "Urbanización", name: "urbanizacion", widget: "string" }] }
+      - { label: "Metros", name: "metros", widget: "number" }
+      - { label: "Habitaciones", name: "habitaciones", widget: "number" }
+      - { label: "Baños", name: "banos", widget: "number" }
+      - { label: "Puestos", name: "estacionamientos", widget: "number" }
+      - { label: "Hab de servicio", name: "hab_servicio", widget: "number" }
+      - { label: "Baño de servicio", name: "bano_servicio", widget: "number" }
+      - { label: "Descripción", name: "descripcion", widget: "text" }
+      - { label: "Amenities", name: "amenities", widget: "list" }
+      - { label: "Imágenes", name: "imagenes", widget: "list", allow_add: true, field: { label: "Imagen", name: "image", widget: "image" } }
+      - { label: "Link único", name: "link", widget: "string" }
