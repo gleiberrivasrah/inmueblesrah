@@ -1,34 +1,45 @@
 [
   {
-    "id": 1,
-    "createdAt": 1735600000,
-    "slug": "apto-chulavista-619m2",
+    "id": 1755285471633,
+    "slug": "#26-135",
     "tipo": "venta",
-    "titulo": "Apartamento de 619 m² en Chulavista — Terraza con vista al valle",
-    "precioUSD": null,
+    "titulo": "Apartamento La Vega #26-135",
+    "precioUSD": 20000,
     "ubicacion": {
-      "ciudad": "Baruta",
-      "urbanizacion": "Chulavista"
+      "ciudad": "Caracas",
+      "urbanizacion": "Parroquia La Vega"
     },
-    "metros": 619,
+    "metros": 74,
     "habitaciones": 3,
-    "banos": 5,
-    "estacionamientos": 4,
-    "descripcion": "Totalmente remodelado. Terraza equipada con vista al valle de Caracas, cocina italiana moderna, habitación principal tipo suite, 2 habitaciones con baño privado, 2 oficinas convertibles, family room, pisos de madera y mármol, A/A en todas las áreas, área de servicio completa. Edificio con piscina, parque infantil, salón de fiestas y vigilancia.",
+    "banos": 1,
+    "estacionamientos": 0,
+    "descripcion": "Bello y acogedor apartamento ubicado en la Urbanización Los Mangos, Parroquia La Vega. Consta de tres cómodas habitaciones, un baño , sala y comedor, amplio balcón con excelente ventilación natural y área de lavandería. La propiedad cuenta con dos tanques de agua de 500 litros cada uno, garantizando autonomía, y aire acondicionado en una de las habitaciones para mayor confort. Se encuentra en una",
     "amenities": [
-      "Terraza amplia",
-      "Cocina italiana",
-      "Family room",
-      "Pisos de madera y mármol",
-      "A/A en todas las áreas",
-      "Vista panorámica",
-      "Piscina",
-      "Parque infantil",
-      "Salón de fiestas",
-      "Vigilancia"
+      "Tanque de Agua",
+      "Parque Infantil",
+      "Conjunto Cerrado"
     ],
     "imagenes": [
-      "images/placeholder.png"
+      "20250702020015338082000000-o.jpg",
+      "20250702020018280200000000-o.jpg",
+      "20250702020020377250000000-o.jpg",
+      "20250702020022610699000000-o.jpg",
+      "20250702020023567539000000-o.jpg",
+      "20250702015806061906000000-o.jpg",
+      "20250702015946051905000000-o.jpg",
+      "20250702015947887738000000-o.jpg",
+      "20250702015949713564000000-o.jpg",
+      "20250702015952027118000000-o.jpg",
+      "20250702015954061059000000-o.jpg",
+      "20250702015955804912000000-o.jpg",
+      "20250702015957999553000000-o.jpg",
+      "20250702020000269620000000-o.jpg",
+      "20250702020002410001000000-o.jpg",
+      "20250702020004818473000000-o.jpg",
+      "20250702020007025613000000-o.jpg",
+      "20250702020008962503000000-o.jpg",
+      "20250702020011180245000000-o.jpg",
+      "20250702020013352718000000-o.jpg"
     ]
   },
   {
