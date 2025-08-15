@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel Admin - Inmuebles</title>
+<style>
+body{font-family:sans-serif;background:#f4f4f4;padding:20px;}
+h1{color:#d20a0a;}
+label{display:block;margin-top:10px;font-weight:600;}
+input, textarea, select{width:100%;padding:8px;margin-top:4px;border-radius:4px;border:1px solid #ccc;}
+button{margin-top:12px;padding:10px 16px;background:#d20a0a;color:#fff;border:none;border-radius:6px;cursor:pointer;}
+.card{background:#fff;padding:12px;margin:12px 0;border-radius:8px;border:1px solid #ccc;}
+</style>
+</head>
+<body>
+<h1>Admin Inmuebles</h1>
+
+<h2>Agregar inmueble</h2>
+<form id="addForm">
+  <label>Título</label><input type="text" name="titulo" required>
+  <label>Slug</label><input type="text" name="slug" required>
+  <label>Tipo</label>
+  <select name="tipo" required>
+    <option value="">Selecciona</option>
+    <option value="venta">Venta</option>
+    <option value="alquiler">Alquiler</option>
+  </select>
+  <label>Precio USD</label><input type="number" name="precioUSD">
+  <label>Municipio</label><input type="text" name="municipio" required>
+  <label>Urbanización</label><input type="text" name="urbanizacion" required>
+  <label>Metros</label><input type="number" name="metros" required>
+  <label>Habitaciones</label><input type="number" name="habitaciones" required>
+  <label>Baños</label><input type="number" name="banos" required>
+  <label>Puestos de estacionamiento</label><input type="number" name="estacionamientos" required>
+  <label>Descripción</label><textarea name="descripcion" rows="4"></textarea>
+  <label>Amenities (separar por comas)</label><input type="text" name="amenities">
+  <label>Imágenes (separar por comas)</label><input type="text" name="imagenes">
+  <button type="submit">Agregar inmueble</button>
+</form>
+
+<h2>Inmuebles actuales</h2>
+<div id="listingsContainer"></div>
+
+<script>
+let listings = [];
+
+function renderListings() {
+  const container = document.getElementById('listingsContainer');
+  container.innerHTML = '';
+  listings.forEach((p,i)=>{
+    const div = document.createElement('div');
+    div.className='card';
+    div.innerHTML=`<strong>${p.titulo}</strong> (${p.tipo})<br>
+    ${p.ubicacion?.urbanizacion}, ${p.ubicacion?.municipio} • ${p.metros} m² • ${p.habitaciones} Hab • ${p.banos} Baños • ${p.estacionamientos} Puestos
+    <br>Precio: ${p.precioUSD || 'Consultar'}
+    `;
+    container.appendChild(div);
+  });
+}
+
+document.getElementById('addForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const f = e.target;
+  const newItem = {
+    id: Date.now(),
+    slug: f.slug.value.trim(),
+    tipo: f.tipo.value,
+    titulo: f.titulo.value,
+    precioUSD: f.precioUSD.value ? parseInt(f.precioUSD.value) : null,
+    ubicacion: {municipio:f.municipio.value, urbanizacion:f.urbanizacion.value},
+    metros: parseInt(f.metros.value),
+    habitaciones: parseInt(f.habitaciones.value),
+    banos: parseInt(f.banos.value),
+    estacionamientos: parseInt(f.estacionamientos.value),
+    descripcion: f.descripcion.value,
+    amenities: f.amenities.value.split(',').map(x=>x.trim()).filter(x=>x),
+    imagenes: f.imagenes.value.split(',').map(x=>x.trim()).filter(x=>x)
+  };
+  listings.push(newItem);
+  renderListings();
+  f.reset();
+
+  // Generar JSON para copiar y subir a GitHub
+  const json = JSON.stringify(listings,null,2);
+  console.log('Copiar este JSON y reemplazar listings.json:\n',json);
+  alert('Inmueble agregado. Abre la consola para copiar el JSON actualizado y subir a GitHub.');
+});
+
+// Inicializa mostrando vacíos
+renderListings();
+</script>
+
+</body>
+</html>
