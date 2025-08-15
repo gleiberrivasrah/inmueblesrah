@@ -13,8 +13,6 @@
     "metros": 619,
     "habitaciones": 3,
     "banos": 5,
-    "hab_servicio": 1,
-    "bano_servicio": 1,
     "estacionamientos": 4,
     "descripcion": "Totalmente remodelado. Terraza equipada con vista al valle de Caracas, cocina italiana moderna, habitación principal tipo suite, 2 habitaciones con baño privado, 2 oficinas convertibles, family room, pisos de madera y mármol, A/A en todas las áreas, área de servicio completa. Edificio con piscina, parque infantil, salón de fiestas y vigilancia.",
     "amenities": [
@@ -31,8 +29,7 @@
     ],
     "imagenes": [
       "images/placeholder.png"
-    ],
-    "link": ""  // Aquí pones el enlace único del apartamento
+    ]
   },
   {
     "id": 2,
@@ -48,8 +45,6 @@
     "metros": 225,
     "habitaciones": 3,
     "banos": 4,
-    "hab_servicio": 0,
-    "bano_servicio": 0,
     "estacionamientos": 3,
     "descripcion": "PH moderno recién remodelado con vista 360° al Ávila, áreas aprovechadas, domótica (apagadores Wi‑Fi, luminarias con 4 temperaturas), listo para habitar.",
     "amenities": [
@@ -60,8 +55,7 @@
     ],
     "imagenes": [
       "images/placeholder.png"
-    ],
-    "link": ""
+    ]
   },
   {
     "id": 3,
@@ -77,8 +71,6 @@
     "metros": 120,
     "habitaciones": 3,
     "banos": 2,
-    "hab_servicio": 0,
-    "bano_servicio": 0,
     "estacionamientos": 2,
     "descripcion": "Apartamento cómodo y luminoso en Altamira, ideal para familias. Edificio con vigilancia.",
     "amenities": [
@@ -88,7 +80,6 @@
     ],
     "imagenes": [
       "images/placeholder.png"
-    ],
-    "link": ""
+    ]
   }
 ]
