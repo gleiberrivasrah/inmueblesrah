@@ -100,7 +100,7 @@ a:hover {
 .gallery{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
 .main-img{width:100%;height:420px;object-fit:cover;border-radius:8px;background:#0b0b0c}
 .thumbs{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
-.thumbs img{width:120px;height:80px;object-fit:cover;border:2px solid ;border-radius:8px;cursor:pointer}
+.thumbs img{width:120px;height:80px;object-fit:cover;border:2px solid transparent;border-radius:8px;cursor:pointer}
 .thumbs img.active{border-color:var(--accent)}
 .info{display:flex;flex-direction:column;gap:10px}
 .amenities{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
