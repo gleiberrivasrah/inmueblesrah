@@ -1,23 +1,20 @@
 backend:
-  name: github
-  repo: gleiberrivasrah/inmueblesrah  # reemplaza con tu usuario y repo de GitHub
-  branch: main  # o master, según tu repo
+  name: git-gateway
+  branch: main # o master según tu repositorio
 
-media_folder: "images/uploads" # carpeta donde se guardarán las fotos
+media_folder: "images/uploads" # Carpeta donde se guardarán las fotos
 public_folder: "/images/uploads"
 
 collections:
   - name: "inmuebles"
     label: "Inmuebles"
-    folder: "data"  # la carpeta donde actualmente tienes listings.json
+    folder: "inmuebles"
     create: true
-    slug: "{{nombre | slugify}}"
+    slug: "{{slug}}"
     fields:
-      - { label: "Nombre", name: "nombre", widget: "string" }
-      - { label: "Zona", name: "zona", widget: "string" }
-      - { label: "Precio", name: "precio", widget: "string" }
-      - { label: "Descripción", name: "descripcion", widget: "text" }
-      - { label: "Fotos", name: "fotos", widget: "list", allow_add: true, summary: "{{fotos.length}} fotos", fields: 
-          - { label: "URL Foto", name: "url", widget: "image" } 
-        }
-      - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "description", widget: "text" }
+      - { label: "Precio", name: "price", widget: "string" }
+      - { label: "Ubicación", name: "location", widget: "string" }
+      - { label: "Imagen principal", name: "thumbnail", widget: "image" }
+      - { label: "Galería de imágenes", name: "gallery", widget: "list", field: { label: Imagen, name: image, widget: image } }
