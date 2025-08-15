@@ -4,7 +4,7 @@
     "slug": "#26-135",
     "tipo": "venta",
     "titulo": "Apartamento La Vega #26-135",
-    "precioUSD": 20000,
+    "precioREF": 20000,
     "ubicacion": {
       "ciudad": "Caracas",
       "urbanizacion": "Parroquia La Vega"
@@ -49,7 +49,7 @@
     "slug": "ph-225m2-vista-360",
     "tipo": "venta",
     "titulo": "Pent House 225 m² — Vista 360° y domótica",
-    "precioUSD": null,
+    "precioREF": null,
     "ubicacion": {
       "ciudad": "Chacao",
       "urbanizacion": "El Rosal"
@@ -75,7 +75,7 @@
     "slug": "alquiler-altamira-3h",
     "tipo": "alquiler",
     "titulo": "Apartamento en Altamira — 3H/2B/2P",
-    "precioUSD": 1200,
+    "precioREF": 1200,
     "ubicacion": {
       "ciudad": "Chacao",
       "urbanizacion": "Altamira"
@@ -99,7 +99,7 @@
     "slug": "1",
     "tipo": "venta",
     "titulo": "casa",
-    "precioUSD": 35000,
+    "precioREF": 35000,
     "ubicacion": {
       "ciudad": "Libertador",
       "urbanizacion": "La candelaria"
