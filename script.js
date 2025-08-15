@@ -57,7 +57,7 @@ function renderCards(list){
       </div>
       <div class="actions">
         <a class="btn" href="property.html?slug=${encodeURIComponent(p.slug)}">Ver detalle</a>
-        <a class="btn secondary" target="_blank" rel="noopener" href="https://wa.me/584243597040?text=${encodeURIComponent('Hola, me interesa: ' + p.titulo + ' (' + location.origin + location.pathname.replace(/[^/]+$/, '') + 'property.html?slug=' + p.slug + ')')}">WhatsApp</a>
+        <a class="btn secondary" target="_blank" rel="noopener" href="https://wa.me/584241289672?text=${encodeURIComponent('Hola, me interesa: ' + p.titulo + ' (' + location.origin + location.pathname.replace(/[^/]+$/, '') + 'property.html?slug=' + p.slug + ')')}">WhatsApp</a>
       </div>
     `;
     grid.appendChild(card);
