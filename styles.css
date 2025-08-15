@@ -1,13 +1,13 @@
 /* Minimal, brand‑friendly styles (rojo, negro, gris, blanco) */
 :root{
   --bg: #ffffff; /* fondo blanco */
-  --panel: rgba(245,245,245,0.8); /* secciones blancas semi-transparentes */
+  --panel: rgba(200,200,200,0.5); /* secciones blancas semi-transparentes */
   --text: #222222; /* texto oscuro */
   --muted:#666666; /* texto secundario gris */
   --line:#cccccc; /* bordes suaves */
   --accent:#d20a0a; /* rojo */
   --accent-2:#ffffff; /* blanco */
-  --chip: rgba(200,200,200,0.5); /* badges semi-transparentes */
+  --chip: rgba(180,180,180,0.5); /* badges semi-transparentes */
 }
 
 *{
