@@ -122,6 +122,8 @@ function initDetailPage(){
     document.getElementById('habs').textContent = `${p.habitaciones} Hab`;
     document.getElementById('banos').textContent = `${p.banos} Baños`;
     document.getElementById('puestos').textContent = `${p.estacionamientos} Puestos`;
+    document.getElementById('habs').textContent = `${p.hab_servicio} Hab_Serv`;
+    document.getElementById('banos').textContent = `${p.bano_servicio} baño_serv`;
 
     const priceEl = document.getElementById('price');
     if(typeof p.precioUSD === 'number'){ priceEl.textContent = money(p.precioUSD); }
