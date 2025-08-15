@@ -2,7 +2,7 @@
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-const money = (n) => new Intl.NumberFormat('es-VE',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+const money = (n) => new Intl.NumberFormat('es-VE',{style:'currency',currency:'REF',maximumFractionDigits:0}).format(n);
 const text = (s='') => (s ?? '').toString();
 
 async function loadData(){
@@ -23,7 +23,7 @@ function applyFilters(list){
     const okTipo = !tipo || p.tipo === tipo;
     const okZona = !zona || (p.ubicacion?.urbanizacion || '').toLowerCase().includes(zona) || (p.ubicacion?.ciudad || '').toLowerCase().includes(zona);
     const okHabs = !habsMin || (p.habitaciones || 0) >= habsMin;
-    const precio = p.precioUSD;
+    const precio = p.precioREF;
     const okPrecio = (pmin===0 && pmax===Infinity) ? true : (typeof precio === 'number' && precio >= pmin && precio <= pmax);
     return okTipo && okZona && okHabs && okPrecio;
   });
@@ -43,7 +43,7 @@ function renderCards(list){
     const card = document.createElement('article');
     card.className = 'card';
     const img = (p.imagenes && p.imagenes[0]) || 'images/placeholder.png';
-    const price = (typeof p.precioUSD === 'number') ? money(p.precioUSD) : 'Consultar';
+    const price = (typeof p.precioREF === 'number') ? money(p.precioREF) : 'Consultar';
     const badge = p.tipo === 'venta' ? 'En venta' : 'En alquiler';
     card.innerHTML = `
       <img class="cover" src="${img}" alt="${p.titulo || 'Inmueble'}" loading="lazy">
@@ -124,7 +124,7 @@ function initDetailPage(){
     document.getElementById('puestos').textContent = `${p.estacionamientos} Puestos`;
 
     const priceEl = document.getElementById('price');
-    if(typeof p.precioUSD === 'number'){ priceEl.textContent = money(p.precioUSD); }
+    if(typeof p.precioREF === 'number'){ priceEl.textContent = money(p.precioREF); }
     else { priceEl.textContent = 'Precio a consultar'; }
 
     const desc = document.getElementById('descripcion');
