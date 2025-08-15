@@ -10,10 +10,34 @@
   --chip:#27292e;
 }
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,'Noto Sans',sans-serif}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+*{
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: url("images/fondo-caracas.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #f2f2f2; /* texto claro para contraste */
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* Caja de contenido con fondo semitransparente */
+.container, .about-card, .filters, .contact {
+    background-color: rgba(0, 0, 0, 0.6); /* negro semi-transparente */
+    border-radius: 8px;
+    padding: 16px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
 
 .topbar{
   position:sticky;top:0;z-index:20;
