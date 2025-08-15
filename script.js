@@ -21,7 +21,7 @@ function applyFilters(list){
 
   return list.filter(p=>{
     const okTipo = !tipo || p.tipo === tipo;
-    const okZona = !zona || (p.ubicacion?.urbanizacion || '').toLowerCase().includes(zona) || (p.ubicacion?.municipio || '').toLowerCase().includes(zona);
+    const okZona = !zona || (p.ubicacion?.urbanizacion || '').toLowerCase().includes(zona) || (p.ubicacion?.ciudad || '').toLowerCase().includes(zona);
     const okHabs = !habsMin || (p.habitaciones || 0) >= habsMin;
     const precio = p.precioUSD;
     const okPrecio = (pmin===0 && pmax===Infinity) ? true : (typeof precio === 'number' && precio >= pmin && precio <= pmax);
@@ -52,7 +52,7 @@ function renderCards(list){
         <h3>${text(p.titulo)}</h3>
         <div class="price">${price}</div>
         <div class="meta">
-          ${text(p.ubicacion?.urbanizacion)}, ${text(p.ubicacion?.municipio)} • ${p.metros} m² • ${p.habitaciones} Hab • ${p.banos} Baños
+          ${text(p.ubicacion?.urbanizacion)}, ${text(p.ubicacion?.ciudad)} • ${p.metros} m² • ${p.habitaciones} Hab • ${p.banos} Baños
         </div>
       </div>
       <div class="actions">
@@ -117,7 +117,7 @@ function initDetailPage(){
     document.title = p.titulo + ' | Inmueble en Caracas';
     document.getElementById('propTitle').textContent = p.titulo;
     document.getElementById('badge').textContent = p.tipo === 'venta' ? 'En venta' : 'En alquiler';
-    document.getElementById('ubicacion').textContent = `${text(p.ubicacion?.urbanizacion)}, ${text(p.ubicacion?.municipio)}`;
+    document.getElementById('ubicacion').textContent = `${text(p.ubicacion?.urbanizacion)}, ${text(p.ubicacion?.ciudad)}`;
     document.getElementById('metros').textContent = `${p.metros} m²`;
     document.getElementById('habs').textContent = `${p.habitaciones} Hab`;
     document.getElementById('banos').textContent = `${p.banos} Baños`;
