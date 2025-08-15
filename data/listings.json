@@ -7,7 +7,7 @@
     "titulo": "Apartamento de 619 m² en Chulavista — Terraza con vista al valle",
     "precioUSD": null,
     "ubicacion": {
-      "municipio": "Baruta",
+      "ciudad": "Baruta",
       "urbanizacion": "Chulavista"
     },
     "metros": 619,
@@ -39,7 +39,7 @@
     "titulo": "Pent House 225 m² — Vista 360° y domótica",
     "precioUSD": null,
     "ubicacion": {
-      "municipio": "Chacao",
+      "ciudad": "Chacao",
       "urbanizacion": "El Rosal"
     },
     "metros": 225,
@@ -65,7 +65,7 @@
     "titulo": "Apartamento en Altamira — 3H/2B/2P",
     "precioUSD": 1200,
     "ubicacion": {
-      "municipio": "Chacao",
+      "ciudad": "Chacao",
       "urbanizacion": "Altamira"
     },
     "metros": 120,
@@ -89,7 +89,7 @@
     "titulo": "casa",
     "precioUSD": 35000,
     "ubicacion": {
-      "municipio": "Libertador",
+      "ciudad": "Libertador",
       "urbanizacion": "La candelaria"
     },
     "metros": 86,
