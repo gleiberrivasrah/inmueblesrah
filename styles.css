@@ -1,7 +1,7 @@
 /* Minimal, brand‑friendly styles (rojo, negro, gris, blanco) */
 :root{
   --bg: #ffffff; /* fondo blanco */
-  --panel: rgba(220,220,220,0.5); /* secciones blancas semi-transparentes */
+  --panel: rgba(250,250,250,0.8); /* secciones blancas semi-transparentes */
   --text: #222222; /* texto oscuro */
   --muted:#272727; /* texto secundario gris */
   --line:#cccccc; /* bordes suaves */
