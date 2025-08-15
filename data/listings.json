@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "createdAt": 1735600000,
+    "slug": "apto-chulavista-619m2",
+    "tipo": "venta",
+    "titulo": "Apartamento de 619 m² en Chulavista — Terraza con vista al valle",
+    "precioUSD": null,
+    "ubicacion": {
+      "municipio": "Baruta",
+      "urbanizacion": "Chulavista"
+    },
+    "metros": 619,
+    "habitaciones": 3,
+    "banos": 5,
+    "estacionamientos": 4,
+    "descripcion": "Totalmente remodelado. Terraza equipada con vista al valle de Caracas, cocina italiana moderna, habitación principal tipo suite, 2 habitaciones con baño privado, 2 oficinas convertibles, family room, pisos de madera y mármol, A/A en todas las áreas, área de servicio completa. Edificio con piscina, parque infantil, salón de fiestas y vigilancia.",
+    "amenities": [
+      "Terraza amplia",
+      "Cocina italiana",
+      "Family room",
+      "Pisos de madera y mármol",
+      "A/A en todas las áreas",
+      "Vista panorámica",
+      "Piscina",
+      "Parque infantil",
+      "Salón de fiestas",
+      "Vigilancia"
+    ],
+    "imagenes": [
+      "images/placeholder.png"
+    ]
+  },
+  {
+    "id": 2,
+    "createdAt": 1735500000,
+    "slug": "ph-225m2-vista-360",
+    "tipo": "venta",
+    "titulo": "Pent House 225 m² — Vista 360° y domótica",
+    "precioUSD": null,
+    "ubicacion": {
+      "municipio": "Chacao",
+      "urbanizacion": "El Rosal"
+    },
+    "metros": 225,
+    "habitaciones": 3,
+    "banos": 4,
+    "estacionamientos": 3,
+    "descripcion": "PH moderno recién remodelado con vista 360° al Ávila, áreas aprovechadas, domótica (apagadores Wi‑Fi, luminarias con 4 temperaturas), listo para habitar.",
+    "amenities": [
+      "Vista 360°",
+      "Domótica",
+      "Iluminación regulable",
+      "Moderno"
+    ],
+    "imagenes": [
+      "images/placeholder.png"
+    ]
+  },
+  {
+    "id": 3,
+    "createdAt": 1735400000,
+    "slug": "alquiler-altamira-3h",
+    "tipo": "alquiler",
+    "titulo": "Apartamento en Altamira — 3H/2B/2P",
+    "precioUSD": 1200,
+    "ubicacion": {
+      "municipio": "Chacao",
+      "urbanizacion": "Altamira"
+    },
+    "metros": 120,
+    "habitaciones": 3,
+    "banos": 2,
+    "estacionamientos": 2,
+    "descripcion": "Apartamento cómodo y luminoso en Altamira, ideal para familias. Edificio con vigilancia.",
+    "amenities": [
+      "Vigilancia",
+      "Iluminación natural",
+      "Cercano a servicios"
+    ],
+    "imagenes": [
+      "images/placeholder.png"
+    ]
+  }
+]

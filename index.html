@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gleiber Rivas | Inmuebles en Caracas</title>
+  <meta name="description" content="Inmuebles en Caracas: ventas y alquiler. Asesoría profesional con Gleiber Rivas, Rent‑A‑House." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="preload" as="image" href="images/placeholder.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="images/logo.svg" alt="Logo Rent‑A‑House / Gleiber Rivas" class="logo" />
+      <div class="brand-text">
+        <strong>Gleiber Rivas</strong>
+        <span>Asesor Inmobiliario | Caracas</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#buscador" class="active">Inmuebles</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/584243597040" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Encuentra tu próximo hogar en Caracas</h1>
+      <p>Ventas y alquileres con atención personalizada y respaldo profesional.</p>
+    </section>
+
+    <section class="filters" id="buscador">
+      <div class="filter-group">
+        <label for="tipo">Tipo</label>
+        <select id="tipo">
+          <option value="">Todos</option>
+          <option value="venta">Venta</option>
+          <option value="alquiler">Alquiler</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="zona">Zona / Urbanización</label>
+        <input id="zona" type="text" placeholder="Chulavista, Altamira, etc." />
+      </div>
+      <div class="filter-group">
+        <label for="habitaciones">Habitaciones</label>
+        <select id="habitaciones">
+          <option value="">Todas</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+          <option value="5">5+</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="precio-min">Precio mín. (USD)</label>
+        <input id="precio-min" type="number" min="0" step="1000" />
+      </div>
+      <div class="filter-group">
+        <label for="precio-max">Precio máx. (USD)</label>
+        <input id="precio-max" type="number" min="0" step="1000" />
+      </div>
+      <button id="btn-limpiar" class="btn secondary">Limpiar</button>
+    </section>
+
+    <section id="contador" class="count"></section>
+
+    <section id="grid" class="grid" aria-live="polite"></section>
+
+    <section class="about" id="sobre-mi">
+      <div class="about-card">
+        <img src="images/profile.jpg" alt="Gleiber Rivas" class="avatar" />
+        <div>
+          <h2>Sobre mí</h2>
+          <p>Soy <strong>Gleiber Rivas</strong>, asesor inmobiliario profesional de Rent‑A‑House. Te acompaño en la compra, venta o alquiler de tu inmueble en Caracas con estrategia, transparencia y atención personalizada.</p>
+          <a class="btn" href="https://wa.me/584243597040?text=Hola%20Gleiber,%20quiero%20publicar%20o%20buscar%20un%20inmueble" target="_blank" rel="noopener">Publica tu inmueble</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Contacto</h2>
+      <p>¿Te interesa publicar o visitar un inmueble? Escríbeme.</p>
+      <ul class="contact-list">
+        <li>📞 <a href="tel:+584243597040">+58 424 359 7040</a></li>
+        <li>✉️ <a href="mailto:gleiberrivasrah@gmail.com">gleiberrivasrah@gmail.com</a></li>
+        <li>🟢 <a href="https://wa.me/584243597040" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li>📷 @gleiberrivasrah (Instagram/TikTok)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Gleiber Rivas — Rent‑A‑House. Sitio estático hospedado gratis.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

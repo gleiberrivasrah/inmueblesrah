@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Importar CSV → JSON | Inmuebles</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    body{padding:16px}
+    textarea{width:100%;min-height:220px;background:#111114;color:#f2f2f2;border:1px solid #2a2c30;border-radius:10px;padding:10px}
+    .row{display:grid;grid-template-columns:1fr;gap:12px;margin:12px 0}
+    pre{white-space:pre-wrap;background:#111114;border:1px solid #2a2c30;border-radius:10px;padding:10px}
+    code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .btn{width:auto}
+    small{color:#a8acb3}
+  </style>
+</head>
+<body>
+  <h1>Importar apartamentos: CSV → JSON</h1>
+  <p>Pega tu CSV con columnas: <code>slug,tipo,titulo,precioUSD,municipio,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt</code></p>
+  <div class="row">
+    <textarea id="csv" placeholder="slug,tipo,titulo,precioUSD,municipio,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt
+apto-chulavista-619m2,venta,Apartamento 619 m² Chulavista,,Baruta,Chulavista,619,3,5,4,Descripción con detalles,&quot;Terraza amplia|Cocina italiana|Piscina&quot;,&quot;images/foto1.jpg|images/foto2.jpg&quot;,1735600000
+alquiler-altamira-3h,alquiler,Altamira 3H/2B/2P,1200,Chacao,Altamira,120,3,2,2,Comodo y luminoso,&quot;Vigilancia|Cerca de servicios&quot;,&quot;images/foto3.jpg|images/foto4.jpg&quot;,1735400000"></textarea>
+    <button class="btn" id="convertir">Convertir a JSON</button>
+  </div>
+  <div class="row">
+    <h3>Resultado</h3>
+    <pre id="out"></pre>
+  </div>
+  <p><small>Consejo: copia el arreglo generado y pégalo dentro de <code>data/listings.json</code>. Si ya tienes datos, pega solo los nuevos objetos.</small></p>
+
+<script>
+document.getElementById('convertir').addEventListener('click', ()=>{
+  const raw = document.getElementById('csv').value.trim();
+  if(!raw){ alert('Pega tu CSV primero'); return; }
+  const lines = raw.split(/\r?\n/).filter(Boolean);
+  const header = lines[0].split(',').map(s=>s.trim());
+  const rows = lines.slice(1);
+
+  const arr = rows.map((line,idx)=>{
+    let cols = [];
+    let cur = '', inQ = false;
+    for (let i=0;i<line.length;i++){
+      const ch = line[i];
+      if(ch === '"'){ inQ = !inQ; continue; }
+      if(ch === ',' && !inQ){ cols.push(cur); cur=''; }
+      else cur += ch;
+    }
+    cols.push(cur);
+    const obj = {};
+    header.forEach((h,i)=>{ obj[h] = (cols[i] ?? '').trim(); });
+    const precio = obj.precioUSD === '' ? null : Number(obj.precioUSD);
+    const createdAt = obj.createdAt ? Number(obj.createdAt) : Date.now()/1000|0;
+    const amenities = (obj.amenities||'').split('|').filter(Boolean);
+    const imagenes = (obj.imagenes||'').split('|').filter(Boolean);
+    return {
+      id: Date.now() + idx,
+      createdAt,
+      slug: obj.slug,
+      tipo: obj.tipo,
+      titulo: obj.titulo,
+      precioUSD: (precio===0?0:precio) ?? null,
+      ubicacion: { municipio: obj.municipio, urbanizacion: obj.urbanizacion },
+      metros: Number(obj.metros||0),
+      habitaciones: Number(obj.habitaciones||0),
+      banos: Number(obj.banos||0),
+      estacionamientos: Number(obj.estacionamientos||0),
+      descripcion: obj.descripcion,
+      amenities,
+      imagenes
+    };
+  });
+  document.getElementById('out').textContent = JSON.stringify(arr, null, 2);
+});
+</script>
+</body>
+</html>

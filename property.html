@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title id="title">Detalle de inmueble</title>
+  <meta name="description" content="Detalle de inmueble en Caracas por Gleiber Rivas." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="images/logo.svg" alt="Logo" class="logo" />
+      <div class="brand-text">
+        <strong>Gleiber Rivas</strong>
+        <span>Asesor Inmobiliario | Caracas</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html#buscador">Inmuebles</a>
+      <a href="index.html#sobre-mi">Sobre mí</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a href="https://wa.me/584243597040" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <a class="back" href="index.html#buscador">← Volver al listado</a>
+    <article id="prop" class="prop-detail">
+      <div class="gallery">
+        <img id="mainImg" src="images/placeholder.png" alt="Foto principal" class="main-img" />
+        <div class="thumbs" id="thumbs"></div>
+      </div>
+      <div class="info">
+        <h1 id="propTitle">Inmueble</h1>
+        <div class="price-line">
+          <span id="price" class="price"></span>
+          <span id="badge" class="badge"></span>
+        </div>
+        <p class="meta">
+          <span id="ubicacion"></span> • <span id="metros"></span> • <span id="habs"></span> • <span id="banos"></span> • <span id="puestos"></span>
+        </p>
+        <p id="descripcion"></p>
+        <ul id="amenities" class="amenities"></ul>
+
+        <div class="cta">
+          <a id="cta-ws" class="btn" target="_blank" rel="noopener">Quiero más info</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <small>© <span id="year"></span> Gleiber Rivas — Rent‑A‑House.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
