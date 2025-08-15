@@ -56,7 +56,7 @@ function renderCards(list){
         </div>
       </div>
       <div class="actions">
-        <a class="btn" href="property.html?slug=${encodeURIComponent(p.slug)}">Ver detalle</a>
+        <a class="btn" target="_blank" href="${p.link || '#'}">Quiero más info</a>
         <a class="btn secondary" target="_blank" rel="noopener" href="https://wa.me/584241289672?text=${encodeURIComponent('Hola, me interesa: ' + p.titulo + ' (' + location.origin + location.pathname.replace(/[^/]+$/, '') + 'property.html?slug=' + p.slug + ')')}">WhatsApp</a>
       </div>
     `;
@@ -123,6 +123,16 @@ function initDetailPage(){
     document.getElementById('banos').textContent = `${p.banos} Baños`;
     document.getElementById('puestos').textContent = `${p.estacionamientos} Puestos`;
 
+    // Nuevas características de servicio
+    if(p.hab_servicio > 0){
+      const el = document.getElementById('hab-servicio');
+      if(el) el.textContent = `${p.hab_servicio} Hab. de servicio`;
+    }
+    if(p.bano_servicio > 0){
+      const el = document.getElementById('bano-servicio');
+      if(el) el.textContent = `${p.bano_servicio} Baño(s) de servicio`;
+    }
+
     const priceEl = document.getElementById('price');
     if(typeof p.precioUSD === 'number'){ priceEl.textContent = money(p.precioUSD); }
     else { priceEl.textContent = 'Precio a consultar'; }
@@ -153,9 +163,9 @@ function initDetailPage(){
       thumbs.appendChild(im);
     });
 
-    const msg = `Hola, me interesa: ${p.titulo} (${window.location.href})`;
     const ws = document.getElementById('cta-ws');
-    ws.href = 'https://wa.me/584241289672?text=' + encodeURIComponent(msg);
+    ws.href = 'https://wa.me/584241289672?text=' + encodeURIComponent(`Hola, me interesa: ${p.titulo} (${window.location.href})`);
+
   })
   .catch(err=>{
     prop.innerHTML = '<p>No se pudo cargar la información.</p>';
