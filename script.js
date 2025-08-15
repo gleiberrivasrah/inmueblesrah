@@ -155,7 +155,7 @@ function initDetailPage(){
 
     const msg = `Hola, me interesa: ${p.titulo} (${window.location.href})`;
     const ws = document.getElementById('cta-ws');
-    ws.href = 'https://wa.me/584243597040?text=' + encodeURIComponent(msg);
+    ws.href = 'https://wa.me/584241289672?text=' + encodeURIComponent(msg);
   })
   .catch(err=>{
     prop.innerHTML = '<p>No se pudo cargar la información.</p>';
