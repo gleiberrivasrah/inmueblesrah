@@ -25,7 +25,7 @@ html, body {
 
 /* Caja de contenido con fondo semitransparente */
 .container, .about-card, .filters, .contact {
-    background-color: rgba(245, 245, 245, 0.8); /* gris semi-transparente */
+    background-color: rgba(0, 0, 0, 0.6); /* gris semi-transparente */
     border-radius: 8px;
     padding: 16px;
 }
