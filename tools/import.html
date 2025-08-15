@@ -17,9 +17,9 @@
 </head>
 <body>
   <h1>Importar apartamentos: CSV → JSON</h1>
-  <p>Pega tu CSV con columnas: <code>slug,tipo,titulo,precioUSD,municipio,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt</code></p>
+  <p>Pega tu CSV con columnas: <code>slug,tipo,titulo,precioUSD,ciudad,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt</code></p>
   <div class="row">
-    <textarea id="csv" placeholder="slug,tipo,titulo,precioUSD,municipio,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt
+    <textarea id="csv" placeholder="slug,tipo,titulo,precioUSD,ciudad,urbanizacion,metros,habitaciones,banos,estacionamientos,descripcion,amenities,imagenes,createdAt
 apto-chulavista-619m2,venta,Apartamento 619 m² Chulavista,,Baruta,Chulavista,619,3,5,4,Descripción con detalles,&quot;Terraza amplia|Cocina italiana|Piscina&quot;,&quot;images/foto1.jpg|images/foto2.jpg&quot;,1735600000
 alquiler-altamira-3h,alquiler,Altamira 3H/2B/2P,1200,Chacao,Altamira,120,3,2,2,Comodo y luminoso,&quot;Vigilancia|Cerca de servicios&quot;,&quot;images/foto3.jpg|images/foto4.jpg&quot;,1735400000"></textarea>
     <button class="btn" id="convertir">Convertir a JSON</button>
@@ -61,7 +61,7 @@ document.getElementById('convertir').addEventListener('click', ()=>{
       tipo: obj.tipo,
       titulo: obj.titulo,
       precioUSD: (precio===0?0:precio) ?? null,
-      ubicacion: { municipio: obj.municipio, urbanizacion: obj.urbanizacion },
+      ubicacion: { ciudad: obj.ciudad, urbanizacion: obj.urbanizacion },
       metros: Number(obj.metros||0),
       habitaciones: Number(obj.habitaciones||0),
       banos: Number(obj.banos||0),
