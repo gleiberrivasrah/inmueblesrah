@@ -81,5 +81,29 @@
     "imagenes": [
       "images/placeholder.png"
     ]
+  },
+  {
+    "id": 1755281889299,
+    "slug": "1",
+    "tipo": "venta",
+    "titulo": "casa",
+    "precioUSD": 35000,
+    "ubicacion": {
+      "municipio": "Libertador",
+      "urbanizacion": "La candelaria"
+    },
+    "metros": 86,
+    "habitaciones": 4,
+    "banos": 4,
+    "estacionamientos": 1,
+    "descripcion": "fadsvjbasdklvjbadsfñlovj",
+    "amenities": [
+      "cama",
+      "carro",
+      "cuarto"
+    ],
+    "imagenes": [
+      "images/placeholder.png"
+    ]
   }
 ]
